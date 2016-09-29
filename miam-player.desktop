@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Miam Player
+GenericName=Music player
+Comment=A nice music player
+Exec=miam-player %U
+Icon=miam-player
+Type=Application
+Categories=AudioVideo;Player;Qt;
