@@ -1,11 +1,11 @@
-# https://github.com/MBach/Miam-Player/commit/8aba65290ab648bc401dbbfeecf3c7da7b2643b2
-%global commit0 8aba65290ab648bc401dbbfeecf3c7da7b2643b2
+# https://github.com/MBach/Miam-Player/commit/bc63ae53df9db7fba576a505980998de254649e1
+%global commit0 bc63ae53df9db7fba576a505980998de254649e1
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 %define _name   Miam-Player
 Name:           miam-player
 Version:        0.8.1
-Release:        0.6git%{shortcommit0}%{?dist}
+Release:        0.7git%{shortcommit0}%{?dist}
 Summary:        A nice music player
 License:        GPLv3+ and "BSD (3 clause)"
 Url:            http://miam-player.org/
@@ -135,6 +135,9 @@ fi
 %doc doc/html
 
 %changelog
+* Wed Dec 28 2016 Martin Gansser <martinkg@fedoraproject.org> - 0.8.1-0.7gitbc63ae5
+- Update to 0.8.1-0.7gitbc63ae5
+
 * Sun Sep 18 2016 Martin Gansser <martinkg@fedoraproject.org> - 0.8.1-0.6git8aba652
 - Changed license tag added "BSD (3 clause)"
 - Added BR qtsingleapplication-qt5-devel
