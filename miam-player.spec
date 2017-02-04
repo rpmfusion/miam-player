@@ -1,11 +1,11 @@
-# https://github.com/MBach/Miam-Player/commit/bc63ae53df9db7fba576a505980998de254649e1
-%global commit0 bc63ae53df9db7fba576a505980998de254649e1
+# https://github.com/MBach/Miam-Player/commit/a057928fa33976084bcc38a283f05f029037273c
+%global commit0 a057928fa33976084bcc38a283f05f029037273c
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 %define _name   Miam-Player
 Name:           miam-player
 Version:        0.8.1
-Release:        0.7git%{shortcommit0}%{?dist}
+Release:        0.8git%{shortcommit0}%{?dist}
 Summary:        A nice music player
 License:        GPLv3+ and "BSD (3 clause)"
 Url:            http://miam-player.org/
@@ -26,6 +26,7 @@ BuildRequires:  pkgconfig(Qt5X11Extras)
 BuildRequires:  qtsingleapplication-qt5-devel
 BuildRequires:  pkgconfig(taglib)
 BuildRequires:  libappstream-glib
+BuildRequires:  libchromaprint-devel
 Requires:       hicolor-icon-theme
 
 %description
@@ -93,7 +94,7 @@ make install INSTALL_ROOT=%{buildroot} INSTALL="install -p"
 # As the icon is only in jpg or ico, we need to convert it in png for our desktop file.
 for size in 256 64 48 32 16; do
     mkdir -p %{buildroot}%{_datadir}/icons/hicolor/${size}x${size}/apps
-    convert src/Player/mp.png -resize $size %{buildroot}%{_datadir}/icons/hicolor/${size}x${size}/apps/%{name}.png
+    convert src/player/mp.png -resize $size %{buildroot}%{_datadir}/icons/hicolor/${size}x${size}/apps/%{name}.png
 done
 
 desktop-file-install \
@@ -135,6 +136,10 @@ fi
 %doc doc/html
 
 %changelog
+* Sat Feb 04 2017 Martin Gansser <martinkg@fedoraproject.org> - 0.8.1-0.8gita057928
+- Update to 0.8.1-0.8gita057928
+- Add BR libchromaprint-devel
+
 * Wed Dec 28 2016 Martin Gansser <martinkg@fedoraproject.org> - 0.8.1-0.7gitbc63ae5
 - Update to 0.8.1-0.7gitbc63ae5
 
