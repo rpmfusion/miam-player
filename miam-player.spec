@@ -1,18 +1,16 @@
-# https://github.com/MBach/Miam-Player/commit/a057928fa33976084bcc38a283f05f029037273c
-%global commit0 a057928fa33976084bcc38a283f05f029037273c
+# https://github.com/MBach/Miam-Player/commit/1a21b01a86c4cbcfe8fc6d99cf6e595838856b11
+%global commit0 1a21b01a86c4cbcfe8fc6d99cf6e595838856b11
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 
 %define _name   Miam-Player
 Name:           miam-player
 Version:        0.8.1
-Release:        0.9git%{shortcommit0}%{?dist}
+Release:        0.10git%{shortcommit0}%{?dist}
 Summary:        A nice music player
 License:        GPLv3+ and "BSD (3 clause)"
 Url:            http://miam-player.org/
 Source0:        https://github.com/MBach/Miam-Player/archive/%{commit0}/%{name}-%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 Source1:        %{name}.desktop
-Patch0:         remotecontrol.patch
-Patch1:         install_acoustid.patch
 
 BuildRequires:  ImageMagick
 BuildRequires:  desktop-file-utils
@@ -62,12 +60,10 @@ that use %{name}.
 
 %prep
 %setup -qn %{_name}-%{commit0}
-%patch0 -p0
-%patch1 -p1
 
 # remove 3dparty libs an debian, osx and windows part
 rm -rf src/Core/3rdparty/{taglib,QtAV}
-rm -rf lib/{osx,release}
+rm -rf lib/
 rm -rf debian osx windows
 rm -rf src/Player/release/.moc
 
@@ -138,6 +134,11 @@ fi
 %doc doc/html
 
 %changelog
+* Mon Feb 06 2017 Leigh Scott <leigh123linux@googlemail.com> - 0.8.1-0.10git1a21b01
+- Update to 0.8.1-0.10git1a21b01
+- Dropped remotecontrol.patch
+- Dropped install_acoustid.patch
+
 * Sun Feb 05 2017 Leigh Scott <leigh123linux@googlemail.com> - 0.8.1-0.9gita057928
 - Add patch to install libmiam-acoustid.so
 
