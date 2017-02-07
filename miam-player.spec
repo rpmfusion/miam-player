@@ -134,7 +134,7 @@ fi
 %doc doc/html
 
 %changelog
-* Mon Feb 06 2017 Leigh Scott <leigh123linux@googlemail.com> - 0.8.1-0.10git1a21b01
+* Mon Feb 06 2017 Martin Gansser <martinkg@fedoraproject.org> - 0.8.1-0.10git1a21b01
 - Update to 0.8.1-0.10git1a21b01
 - Dropped remotecontrol.patch
 - Dropped install_acoustid.patch
