@@ -5,7 +5,7 @@
 %define _name   Miam-Player
 Name:           miam-player
 Version:        0.8.1
-Release:        0.11git%{shortcommit0}%{?dist}
+Release:        0.12git%{shortcommit0}%{?dist}
 Summary:        A nice music player
 License:        GPLv3+ and "BSD (3 clause)"
 Url:            http://miam-player.org/
@@ -134,6 +134,9 @@ fi
 %doc doc/html
 
 %changelog
+* Sun Mar 19 2017 RPM Fusion Release Engineering <kwizart@rpmfusion.org> - 0.8.1-0.12git1a21b01
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
+
 * Mon Feb 06 2017 Martin Gansser <martinkg@fedoraproject.org> - 0.8.1-0.11git1a21b01
 - Rebuild
 - Update to 0.8.1-0.11git1a21b01
